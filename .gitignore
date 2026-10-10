@@ -14,3 +14,5 @@ build/
 dist/
 *.spec
 release/
+config.bat
+node_modules

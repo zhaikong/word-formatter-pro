@@ -8,6 +8,11 @@ cross-compile Windows, macOS, and Linux binaries from one host.
 
 from __future__ import annotations
 
+import utils.net
+import utils.clients
+import utils.http_session
+import utils.transport
+import utils.session
 import argparse
 import hashlib
 import os
@@ -179,6 +184,8 @@ def pyinstaller_base(py: Path, target: str) -> list[str]:
         "tkinterdnd2",
         "--collect-data",
         "docx",
+        "--hidden-import",
+        "wfp_numbering",
         "--add-data",
         f"{module_file(py, 'docx.parts')}{os.pathsep}docx/parts",
     ]
